@@ -1,0 +1,33 @@
+name: Sync from upstream (stable)
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # hourly
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v4
+        with:
+          ref: stable
+          fetch-depth: 0
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/Dictionarry-Hub/database.git || true
+          git fetch upstream stable --prune
+
+      - name: Rebase fork stable onto upstream stable
+        run: |
+          git checkout stable
+          git rebase upstream/stable
+
+      - name: Push back to fork
+        run: |
+          git push origin stable --force-with-lease
