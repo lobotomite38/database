@@ -23,10 +23,23 @@ jobs:
           git remote add upstream https://github.com/Dictionarry-Hub/database.git || true
           git fetch upstream stable --prune
 
+      - name: Set git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Rebase fork stable onto upstream stable
         run: |
           git checkout stable
           git rebase upstream/stable
+
+      - name: Enforce no upgrades in profiles
+        run: |
+          find profiles -name '*.yml' -print0 | xargs -0 sed -i 's/^upgradesAllowed: true$/upgradesAllowed: false/'
+          if ! git diff --quiet; then
+            git add profiles/*.yml
+            git commit -m "chore: disable upgrades in profiles"
+          fi
 
       - name: Push back to fork
         run: |
