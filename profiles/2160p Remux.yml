@@ -17,7 +17,7 @@ tags:
 - Lossless Audio
 - h265
 - x265
-upgradesAllowed: true
+upgradesAllowed: false
 minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
@@ -370,3 +370,4 @@ upgrade_until:
   id: -4
   name: 2160p Remux
 language: must_original
+

@@ -10,7 +10,7 @@ tags:
 - Lossy Audio
 - x264
 - x265
-upgradesAllowed: true
+upgradesAllowed: false
 minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
@@ -281,3 +281,4 @@ upgrade_until:
   description: All capable of being indistinguishable from source. WEB-DL included
     to not allow unknown encode to trump known WEB-DL.
 language: must_original
+

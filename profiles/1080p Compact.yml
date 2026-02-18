@@ -8,7 +8,7 @@ tags:
 - Lossy Audio
 - h265
 - x265
-upgradesAllowed: true
+upgradesAllowed: false
 minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
@@ -361,3 +361,4 @@ upgrade_until:
     majority of releases, but there are occasional streaming optimised encodes that
     should be preferred.
 language: must_original
+
