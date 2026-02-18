@@ -31,6 +31,10 @@ jobs:
       - name: Rebase fork stable onto upstream stable
         run: |
           git checkout stable
+          GIT_AUTHOR_NAME="github-actions[bot]" \
+          GIT_AUTHOR_EMAIL="github-actions[bot]@users.noreply.github.com" \
+          GIT_COMMITTER_NAME="github-actions[bot]" \
+          GIT_COMMITTER_EMAIL="github-actions[bot]@users.noreply.github.com" \
           git rebase upstream/stable
 
       - name: Enforce no upgrades in profiles
