@@ -3,13 +3,19 @@ name: Sync from upstream (stable)
 on:
   schedule:
     - cron: "17 * * * *"   # hourly
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      pushover_test:
+        description: "Send a Pushover test notification (no sync)."
+        required: false
+        default: "false"
 
 permissions:
   contents: write
 
 jobs:
   sync:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.pushover_test != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout fork
@@ -48,3 +54,40 @@ jobs:
       - name: Push back to fork
         run: |
           git push origin stable --force-with-lease
+
+      - name: Notify Pushover on failure
+        if: failure()
+        env:
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_APP_TOKEN: ${{ secrets.PUSHOVER_APP_TOKEN }}
+        run: |
+          if [ -z "$PUSHOVER_USER_KEY" ] || [ -z "$PUSHOVER_APP_TOKEN" ]; then
+            echo "Pushover secrets not set; skipping notification."
+            exit 0
+          fi
+          curl -s \
+            --form-string "token=$PUSHOVER_APP_TOKEN" \
+            --form-string "user=$PUSHOVER_USER_KEY" \
+            --form-string "title=Database sync failed" \
+            --form-string "message=Upstream sync failed for $GITHUB_REPOSITORY on branch stable. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            https://api.pushover.net/1/messages.json
+
+  pushover-test:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.pushover_test == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Pushover test notification
+        env:
+          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_APP_TOKEN: ${{ secrets.PUSHOVER_APP_TOKEN }}
+        run: |
+          if [ -z "$PUSHOVER_USER_KEY" ] || [ -z "$PUSHOVER_APP_TOKEN" ]; then
+            echo "Pushover secrets not set; cannot send test."
+            exit 1
+          fi
+          curl -s \
+            --form-string "token=$PUSHOVER_APP_TOKEN" \
+            --form-string "user=$PUSHOVER_USER_KEY" \
+            --form-string "title=Database sync test" \
+            --form-string "message=This is a test Pushover notification for $GITHUB_REPOSITORY." \
+            https://api.pushover.net/1/messages.json
