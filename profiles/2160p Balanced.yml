@@ -277,7 +277,7 @@ custom_formats_sonarr:
 - name: iT
   score: 1000
 - name: Single Episode
-  score: -100000
+  score: -60000
 - name: Season Pack
   score: 10
 - name: HBO Max Enhancement

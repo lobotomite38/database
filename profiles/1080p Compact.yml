@@ -306,7 +306,7 @@ custom_formats_sonarr:
 - name: 720p HDTV Tier 1
   score: 80000
 - name: Single Episode
-  score: -100000
+  score: -60000
 - name: Season Pack
   score: 10
 - name: AMZN

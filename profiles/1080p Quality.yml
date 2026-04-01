@@ -223,7 +223,7 @@ custom_formats_radarr:
   score: -999999
 custom_formats_sonarr:
 - name: Single Episode
-  score: -100000
+  score: -60000
 - name: Season Pack
   score: 10
 - name: Remux (Source)
