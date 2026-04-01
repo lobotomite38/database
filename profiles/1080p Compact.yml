@@ -305,6 +305,8 @@ custom_formats_sonarr:
   score: 640000
 - name: 720p HDTV Tier 1
   score: 80000
+- name: Single Episode
+  score: -100000
 - name: Season Pack
   score: 10
 - name: AMZN
@@ -361,4 +363,3 @@ upgrade_until:
     majority of releases, but there are occasional streaming optimised encodes that
     should be preferred.
 language: must_original
-

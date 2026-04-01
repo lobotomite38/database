@@ -1,0 +1,11 @@
+name: Single Episode
+description: Matches Single Episode Release Type on Sonarr
+tags:
+- Release Type
+conditions:
+- name: Single Episode
+  negate: false
+  releaseType: single_episode
+  required: true
+  type: release_type
+tests: []

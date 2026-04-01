@@ -222,6 +222,8 @@ custom_formats_radarr:
 - name: Upscale
   score: -999999
 custom_formats_sonarr:
+- name: Single Episode
+  score: -100000
 - name: Season Pack
   score: 10
 - name: Remux (Source)
@@ -270,4 +272,3 @@ upgrade_until:
   description: All capable of being indistinguishable from source. WEB-DL included
     to not allow unknown encode to trump known WEB-DL.
 language: must_original
-
