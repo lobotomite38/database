@@ -23,6 +23,7 @@ jobs:
         with:
           ref: stable
           fetch-depth: 0
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN != '' && secrets.UPSTREAM_SYNC_TOKEN || github.token }}
 
       - name: Add upstream remote
         run: |
