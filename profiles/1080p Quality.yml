@@ -10,7 +10,7 @@ tags:
 - x264
 - h264
 upgradesAllowed: false
-minCustomFormatScore: 20000
+minCustomFormatScore: 0
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
@@ -266,6 +266,8 @@ qualities:
     name: WEBDL-480p
   - id: 22
     name: DVD
+- id: 24
+  name: SDTV
 upgrade_until:
   id: -1
   name: 1080p Quality
