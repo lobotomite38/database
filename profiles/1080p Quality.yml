@@ -185,7 +185,7 @@ custom_formats:
 - name: PQ
   score: -999999
 - name: Remux
-  score: -999999
+  score: 200000
 - name: VP9
   score: -999999
 - name: VVC
@@ -216,7 +216,7 @@ custom_formats_radarr:
 - name: Full Disc (Quality Match)
   score: -999999
 - name: Remux (Quality Match)
-  score: -999999
+  score: 0
 - name: Sing Along
   score: -999999
 - name: Upscale
@@ -227,7 +227,7 @@ custom_formats_sonarr:
 - name: Season Pack
   score: 10
 - name: Remux (Source)
-  score: -999999
+  score: 0
 - name: TV Extras
   score: -999999
 - name: Upscaled
@@ -238,6 +238,8 @@ qualities:
   description: All capable of being indistinguishable from source. WEB-DL included
     to not allow unknown encode to trump known WEB-DL.
   qualities:
+  - id: 30
+    name: Remux-1080p
   - id: 10
     name: Bluray-1080p
   - id: 9
