@@ -185,7 +185,7 @@ custom_formats:
 - name: PQ
   score: -999999
 - name: Remux
-  score: 200000
+  score: 250000
 - name: VP9
   score: -999999
 - name: VVC
