@@ -1,0 +1,37 @@
+name: Pre-Release Screener
+description: Matches pre-release screener, cam, telesync, telecine, and workprint release-title tokens so they cannot be accepted as normal WEB-DL/WEBRip/BluRay releases.
+tags:
+- Source
+- Banned
+conditions:
+- name: Pre-Release Screener Tokens
+  negate: false
+  pattern: Pre-Release Screener
+  required: true
+  type: release_title
+tests:
+- conditionResults: []
+  expected: true
+  id: 1
+  input: The.Backrooms.2026.1080p.SCREENER.WEB-DL.H264-GROUP
+  passes: true
+- conditionResults: []
+  expected: true
+  id: 2
+  input: The.Backrooms.2026.1080p.HDSCR.H264-GROUP
+  passes: true
+- conditionResults: []
+  expected: true
+  id: 3
+  input: Some.Movie.2026.1080p.HD-SCREENER.H264-GROUP
+  passes: true
+- conditionResults: []
+  expected: false
+  id: 4
+  input: Some.Movie.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-GROUP
+  passes: true
+- conditionResults: []
+  expected: false
+  id: 5
+  input: Some.Movie.2026.1080p.BluRay.DDP5.1.x264-GROUP
+  passes: true

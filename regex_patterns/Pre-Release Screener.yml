@@ -1,0 +1,31 @@
+name: Pre-Release Screener
+pattern: \b(?:SCREENER|HD[- ._]?SCR|DVD[- ._]?SCR|CAM|HD[- ._]?CAM|HD[- ._]?TS|TELESYNC|HD[- ._]?TC|TELECINE|WORKPRINT)\b
+description: Matches pre-release screener, cam, telesync, telecine, and workprint tokens.
+tags:
+- Source
+- Banned
+tests:
+- expected: true
+  id: 1
+  input: The.Backrooms.2026.1080p.SCREENER.WEB-DL.H264-GROUP
+  passes: true
+- expected: true
+  id: 2
+  input: The.Backrooms.2026.1080p.HDSCR.H264-GROUP
+  passes: true
+- expected: true
+  id: 3
+  input: Some.Movie.2026.1080p.HD-SCREENER.H264-GROUP
+  passes: true
+- expected: true
+  id: 4
+  input: Some.Movie.2026.DVDSCR.x264-GROUP
+  passes: true
+- expected: false
+  id: 5
+  input: Some.Movie.2026.1080p.AMZN.WEB-DL.DDP5.1.H.264-GROUP
+  passes: true
+- expected: false
+  id: 6
+  input: Some.Movie.2026.1080p.BluRay.DDP5.1.x264-GROUP
+  passes: true
