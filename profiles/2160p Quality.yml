@@ -22,6 +22,8 @@ minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
+- name: Anime Dual Audio
+  score: 100000
 - name: 2160p Quality Tier 1
   score: 465000
 - name: 2160p Quality Tier 2
@@ -356,4 +358,3 @@ upgrade_until:
   name: 2160p Quality
   description: Indistinguishable from source
 language: must_original
-

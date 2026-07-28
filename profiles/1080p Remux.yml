@@ -22,6 +22,8 @@ minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
+- name: Anime Dual Audio
+  score: 100000
 - name: 1080p Remux
   score: 440000
 - name: UHD Bluray
@@ -308,4 +310,3 @@ upgrade_until:
   description: All capable of being indistinguishable from source. WEB-DL included
     to not allow unknown encode to trump known WEB-DL.
 language: must_original
-
