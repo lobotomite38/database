@@ -1,0 +1,43 @@
+name: Anime Dual Audio
+description: Prefer anime releases that include both the original language and English audio.
+tags:
+- Anime
+- Language
+conditions:
+- name: Dual Audio
+  negate: false
+  pattern: dual[ ._-]?(audio)|[([]dual[])]|\b(JA|ZH|KO)(?= ?\+ ?.*?\b(EN))|\b(EN)(?= ?\+ ?.*?\b(JA|ZH|KO))|\b(Japanese|Chinese|Korean) ?[ ._\+&-] ?\b(English)|\b(English) ?[ ._\+&-] ?\b(Japanese|Chinese|Korean)|\b(\d{3,4}(p|i)|4K|U(ltra)?HD)\b.*\b(DUAL)\b(?!.*\(|\))
+  required: true
+  type: release_title
+- name: Not Single Language Only
+  negate: true
+  pattern: \[(JA|ZH|KO)\]
+  required: true
+  type: release_title
+- exceptLanguage: false
+  language: japanese
+  name: Japanese Language
+  negate: false
+  required: false
+  type: language
+- exceptLanguage: false
+  language: chinese
+  name: Chinese Language
+  negate: false
+  required: false
+  type: language
+- exceptLanguage: false
+  language: korean
+  name: Korean Language
+  negate: false
+  required: false
+  type: language
+tests:
+- conditionResults:
+  - matches: true
+    name: Dual Audio
+  - matches: true
+    name: Not Single Language Only
+  expected: true
+  input: Cowboy Bebop (1998) S01 1080p NF WEB-DL H264 DDP 5.1 Dual - HONE
+
