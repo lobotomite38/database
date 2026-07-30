@@ -10,7 +10,7 @@ tags:
 - x264
 - h264
 upgradesAllowed: false
-minCustomFormatScore: 0
+minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
@@ -77,6 +77,8 @@ custom_formats:
 - name: DVD
   score: 20000
 - name: DVD Remux
+  score: 20000
+- name: SDTV
   score: 20000
 - name: SD Quality Tier 1
   score: 11000
