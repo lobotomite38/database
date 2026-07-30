@@ -31,7 +31,7 @@ custom_formats:
 - name: 720p WEBRip
   score: 180000
 - name: Anime Dual Audio
-  score: 100000
+  score: 10000
 - name: 1080p Quality Tier 1
   score: 125000
 - name: 1080p Quality Tier 2

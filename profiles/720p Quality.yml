@@ -15,7 +15,7 @@ upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
 - name: Anime Dual Audio
-  score: 100000
+  score: 10000
 - name: 720p WEB-DL
   score: 240000
 - name: 720p Bluray

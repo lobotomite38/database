@@ -26,7 +26,7 @@ custom_formats:
 - name: 720p HDTV
   score: 240000
 - name: Anime Dual Audio
-  score: 100000
+  score: 10000
 - name: 576p Bluray
   score: 160000
 - name: 720p Quality Tier 1
