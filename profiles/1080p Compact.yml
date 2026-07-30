@@ -9,7 +9,7 @@ tags:
 - h265
 - x265
 upgradesAllowed: false
-minCustomFormatScore: 0
+minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
