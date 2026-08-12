@@ -24,6 +24,8 @@ minScoreIncrement: 1
 custom_formats:
 - name: Anime Dual Audio
   score: 10000
+- name: PTP Approved
+  score: 1000
 - name: 1080p Remux
   score: 440000
 - name: UHD Bluray

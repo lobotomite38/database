@@ -32,6 +32,8 @@ custom_formats:
   score: 180000
 - name: Anime Dual Audio
   score: 10000
+- name: PTP Approved
+  score: 1000
 - name: 1080p Quality Tier 1
   score: 125000
 - name: 1080p Quality Tier 2

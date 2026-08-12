@@ -1,0 +1,17 @@
+name: PTP Approved
+description: Prefer staff-approved PassThePopcorn releases verified by the local metadata proxy.
+tags:
+- Indexer
+- Release Group
+conditions:
+- name: PTP Approved
+  negate: false
+  pattern: PTP Approved
+  required: true
+  type: release_title
+tests:
+- conditionResults:
+  - matches: true
+    name: PTP Approved
+  expected: true
+  input: Days and Nights in the Forest 1970 DVDRip x264 PTPApproved

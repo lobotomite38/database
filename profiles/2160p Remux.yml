@@ -24,6 +24,8 @@ minScoreIncrement: 1
 custom_formats:
 - name: Anime Dual Audio
   score: 10000
+- name: PTP Approved
+  score: 1000
 - name: 2160p Remux
   score: 500000
 - name: 2160p Quality Tier 1

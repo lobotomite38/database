@@ -1,0 +1,10 @@
+name: PTP Approved
+pattern: \bPTPApproved\b
+description: Matches a staff-approved PassThePopcorn result verified by the local metadata proxy.
+tags:
+- Indexer
+- Release Group
+tests:
+- expectedMatches:
+  - PTPApproved
+  input: Days and Nights in the Forest 1970 DVDRip x264 PTPApproved

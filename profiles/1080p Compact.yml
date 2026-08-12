@@ -27,6 +27,8 @@ custom_formats:
   score: 240000
 - name: Anime Dual Audio
   score: 10000
+- name: PTP Approved
+  score: 1000
 - name: 576p Bluray
   score: 160000
 - name: 720p Quality Tier 1
