@@ -1,15 +1,11 @@
 name: 2160p Remux
-description: '2160p Remux utilizes **Video / Audio Formats** to prioritise high quality
-  lossless copies of UHD Blurays.
-
-
-  - Average Movie Sizes ~ 40 to 60gb per Movie
-
-  - Movie Quality Ranking ~ 10/10
-
-  - Average TV Sizes ~ 15 to 30gb per Episode
-
-  - TV Quality Ranking ~ 10/10'
+description: >-
+  Request once and keep the best eligible copy available for movies, TV, and anime.
+  Prefer UHD remuxes, then curated 2160p encodes and WEB-DLs; retain 1080p, 720p,
+  DVD, and SDTV fallbacks without waiting for a better release. Upgrades are disabled.
+  HDR and lossless audio are preferences, not requirements. Dual audio is a bounded
+  preference; original-audio-only releases remain eligible. Size varies by source
+  and runtime; this profile does not impose a per-title size cap.
 tags:
 - 2160p
 - Remux Focused
@@ -22,6 +18,10 @@ minCustomFormatScore: 20000
 upgradeUntilScore: 888888
 minScoreIncrement: 1
 custom_formats:
+- name: SDTV
+  score: 20000
+- name: Pre-Release Screener
+  score: -999999
 - name: Anime Dual Audio
   score: 10000
 - name: PTP Approved
@@ -325,12 +325,12 @@ custom_formats_sonarr:
 - name: Upscaled
   score: -999999
 qualities:
+- id: 3
+  name: Remux-2160p
 - id: -4
-  name: 2160p Remux
-  description: ''
+  name: 2160p Quality
+  description: Curated encodes and WEB-DLs ranked by custom formats.
   qualities:
-  - id: 3
-    name: Remux-2160p
   - id: 4
     name: Bluray-2160p
   - id: 5
@@ -370,7 +370,9 @@ qualities:
     name: WEBDL-480p
   - id: 22
     name: DVD
+- id: 24
+  name: SDTV
 upgrade_until:
-  id: -4
-  name: 2160p Remux
+  id: 3
+  name: Remux-2160p
 language: must_original
